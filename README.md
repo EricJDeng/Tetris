@@ -1,6 +1,8 @@
 # Tetris (C++ / SDL2)
 
-Minimal Tetris clone focused on game logic with SDL2 rendering.
+Tetris clone focused on game logic with SDL2 rendering.
+
+Built in C++
 
 **Controls**
 1. `Left` / `Right`: move
