@@ -1,4 +1,5 @@
 #include "game.h"
+#include "pieces.h"
 #include <cstdlib>
 #include <ctime>
 
