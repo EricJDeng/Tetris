@@ -3,6 +3,7 @@ project(tetris_sdl2 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable(tetris
   src/main.cpp
@@ -12,14 +13,14 @@ add_executable(tetris
   src/renderer.cpp
 )
 
-find_package(SDL2 REQUIRED)
+# Find SDL2 using pkg-config
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(SDL2 REQUIRED sdl2)
 
-if (TARGET SDL2::SDL2)
-  target_link_libraries(tetris PRIVATE SDL2::SDL2)
-else()
-  target_include_directories(tetris PRIVATE ${SDL2_INCLUDE_DIRS})
-  target_link_libraries(tetris PRIVATE ${SDL2_LIBRARIES})
-endif()
+target_include_directories(tetris PRIVATE ${SDL2_INCLUDE_DIRS})
+target_link_directories(tetris PRIVATE ${SDL2_LIBRARY_DIRS})
+target_link_libraries(tetris PRIVATE ${SDL2_LIBRARIES})
+target_compile_options(tetris PRIVATE ${SDL2_CFLAGS_OTHER})
 
 if (APPLE)
   target_compile_definitions(tetris PRIVATE SDL_MAIN_HANDLED)

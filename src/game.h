@@ -2,7 +2,7 @@
 #define TETRIS_GAME_H
 
 #include "board.h"
-#include "pieces.h"
+
 
 class Game {
 public:

@@ -1,0 +1,8 @@
+# Build output
+build/
+
+# CMake generated
+compile_commands.json
+
+# Editor/tooling caches
+.cache/
