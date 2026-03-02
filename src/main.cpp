@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include <cstdint>
 
+// Main documentation
 static constexpr int kBlockSize = 30;
 static constexpr int kMargin = 20;
 static constexpr int kBoardWidthPx = Board::kWidth * kBlockSize;

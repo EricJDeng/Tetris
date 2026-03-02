@@ -4,6 +4,7 @@
 #include "board.h"
 
 
+// logic
 class Game {
 public:
   Game();
